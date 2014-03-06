@@ -1,0 +1,16 @@
+{
+  "name": "metalsmith-ignore",
+  "description": "A Metalsmith plugin to ignore files that match a pattern.",
+  "repository": "git://github.com/segmentio/metalsmith-ignore.git",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "dependencies": {
+    "minimatch": "^0.2.14"
+  },
+  "devDependencies": {
+    "mocha": "1.x",
+    "metalsmith": "^0.2.0",
+    "assert-dir-equal": "^0.1.0"
+  }
+}

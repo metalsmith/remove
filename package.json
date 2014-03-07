@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "dependencies": {
-    "minimatch": "^0.2.14"
+    "multimatch": "^0.1.0"
   },
   "devDependencies": {
     "mocha": "1.x",

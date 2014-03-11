@@ -2,8 +2,20 @@
 var equal = require('assert-dir-equal');
 var Metalsmith = require('metalsmith');
 var ignore = require('..');
+var rimraf = require('rimraf');
+var each = require('async').each;
+var join = require('path').join;
 
 describe('metalsmith-ignore', function(){
+  beforeEach(function(done) {
+    var pathsToClean = [
+      join(__dirname, '/fixtures/array/build/'),
+      join(__dirname, '/fixtures/object/build/'),
+      join(__dirname, '/fixtures/string/build/')
+    ];
+    each(pathsToClean, rimraf, done);
+  });
+
   it('should ignore a patterns', function(done){
     var m = Metalsmith('test/fixtures/object').use(ignore({
       patterns: ['ignored.*', 'removed.*']

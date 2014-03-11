@@ -11,6 +11,8 @@
   "devDependencies": {
     "mocha": "1.x",
     "metalsmith": "^0.2.0",
-    "assert-dir-equal": "^0.1.0"
+    "assert-dir-equal": "^0.1.0",
+    "rimraf": "^2.2.6",
+    "async": "^0.2.10"
   }
 }

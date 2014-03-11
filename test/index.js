@@ -1,22 +1,12 @@
 
 var equal = require('assert-dir-equal');
-var Metalsmith = require('metalsmith');
 var ignore = require('..');
-var rimraf = require('rimraf');
-var each = require('async').each;
-var join = require('path').join;
+var Metalsmith = require('metalsmith');
+var rm = require('rimraf').sync;
 
 describe('metalsmith-ignore', function(){
-  beforeEach(function(done) {
-    var pathsToClean = [
-      join(__dirname, '/fixtures/array/build/'),
-      join(__dirname, '/fixtures/object/build/'),
-      join(__dirname, '/fixtures/string/build/')
-    ];
-    each(pathsToClean, rimraf, done);
-  });
-
   it('should ignore a patterns', function(done){
+    rm('test/fixtures/object/build');
     var m = Metalsmith('test/fixtures/object').use(ignore({
       patterns: ['ignored.*', 'removed.*']
     }));
@@ -29,6 +19,7 @@ describe('metalsmith-ignore', function(){
   });
 
   it('should take an array shorthand', function(done){
+    rm('test/fixtures/array/build');
     var m = Metalsmith('test/fixtures/array').use(ignore(['ignored.*', 'removed.*']));
     m.build(function(err){
       if (err) return done(err);
@@ -38,6 +29,7 @@ describe('metalsmith-ignore', function(){
   });
 
   it('should take a string shorthand', function(done){
+    rm('test/fixtures/string/build');
     var m = Metalsmith('test/fixtures/string').use(ignore('ignored.*'));
     m.build(function(err){
       if (err) return done(err);

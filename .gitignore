@@ -1,5 +1,2 @@
 node_modules
-
-test/fixtures/array/build/*
-test/fixtures/object/build/*
-test/fixtures/string/build/*
+**/build

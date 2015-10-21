@@ -1,7 +1,7 @@
 
 # metalsmith-ignore
 
-  A Metalsmith plugin to ignore files that match a pattern.
+  A Metalsmith plugin to ignore files that match a pattern. Uses [multimatch](https://github.com/sindresorhus/multimatch) for matching.
 
 ## Installation
 

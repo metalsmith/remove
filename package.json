@@ -9,9 +9,12 @@
     "multimatch": "^2.1.0"
   },
   "devDependencies": {
-    "mocha": "1.x",
-    "metalsmith": "0.x",
-    "assert-dir-equal": "^0.1.0",
+    "assert-dir-equal": "^1.1.0",
+    "metalsmith": "^2.3.0",
+    "mocha": "^5.2.0",
     "rimraf": "^2.2.6"
+  },
+  "scripts": {
+    "test": "mocha test"
   }
 }

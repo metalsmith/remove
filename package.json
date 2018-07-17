@@ -2,7 +2,7 @@
   "name": "metalsmith-ignore",
   "description": "A Metalsmith plugin to ignore files that match a pattern.",
   "repository": "git://github.com/segmentio/metalsmith-ignore.git",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
   "dependencies": {

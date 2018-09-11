@@ -1,13 +1,14 @@
 /* eslint-env mocha */
-var equal = require('assert-dir-equal');
-var ignore = require('..');
-var Metalsmith = require('metalsmith');
-var rm = require('rimraf').sync;
+
+const equal = require('assert-dir-equal');
+const ignore = require('..');
+const Metalsmith = require('metalsmith');
+const rm = require('rimraf').sync;
 
 describe('metalsmith-ignore', function() {
   it('should ignore a patterns', function(done) {
     rm('test/fixtures/object/build');
-    var m = Metalsmith('test/fixtures/object').use(
+    const m = Metalsmith('test/fixtures/object').use(
       ignore({
         patterns: ['ignored.*', 'removed.*']
       })
@@ -22,7 +23,7 @@ describe('metalsmith-ignore', function() {
 
   it('should take an array shorthand', function(done) {
     rm('test/fixtures/array/build');
-    var m = Metalsmith('test/fixtures/array').use(
+    const m = Metalsmith('test/fixtures/array').use(
       ignore(['ignored.*', 'removed.*'])
     );
     m.build(function(err) {
@@ -34,7 +35,7 @@ describe('metalsmith-ignore', function() {
 
   it('should take a string shorthand', function(done) {
     rm('test/fixtures/string/build');
-    var m = Metalsmith('test/fixtures/string').use(ignore('ignored.*'));
+    const m = Metalsmith('test/fixtures/string').use(ignore('ignored.*'));
     m.build(function(err) {
       if (err) return done(err);
       equal('test/fixtures/string/build', 'test/fixtures/string/expected');
@@ -44,7 +45,7 @@ describe('metalsmith-ignore', function() {
 
   it('should take a string and ignore tilda', function(done) {
     rm('test/fixtures/string-tilda/build');
-    var m = Metalsmith('test/fixtures/string-tilda').use(ignore('*~'));
+    const m = Metalsmith('test/fixtures/string-tilda').use(ignore('*~'));
     m.build(function(err) {
       if (err) return done(err);
       equal(

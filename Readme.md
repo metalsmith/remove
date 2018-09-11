@@ -10,7 +10,9 @@ A Metalsmith plugin to ignore files that match a pattern. Uses [multimatch](http
 
 ## Installation
 
-    $ npm install metalsmith-ignore
+```bash
+$ npm install metalsmith-ignore
+```
 
 ## CLI Usage
 

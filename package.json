@@ -10,11 +10,21 @@
   },
   "devDependencies": {
     "assert-dir-equal": "^1.1.0",
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
     "metalsmith": "^2.3.0",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.2",
     "rimraf": "^2.2.6"
   },
   "scripts": {
-    "test": "mocha test"
+    "pretest": "npm run lint",
+    "test": "mocha test",
+    "lint": "eslint --cache --fix .",
+    "dev": "nodemon --exec 'npm test'",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish"
   }
 }

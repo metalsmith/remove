@@ -41,4 +41,17 @@ describe('metalsmith-ignore', function() {
       done();
     });
   });
+
+  it('should take a string and ignore tilda', function(done) {
+    rm('test/fixtures/string-tilda/build');
+    var m = Metalsmith('test/fixtures/string-tilda').use(ignore('*~'));
+    m.build(function(err) {
+      if (err) return done(err);
+      equal(
+        'test/fixtures/string-tilda/build',
+        'test/fixtures/string-tilda/expected'
+      );
+      done();
+    });
+  });
 });

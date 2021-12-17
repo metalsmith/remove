@@ -26,7 +26,7 @@ yarn add @metalsmith/remove
 
 ## Usage
 
-Pass the options to `Metalsmith#use`:
+Pass the plugin with options to `Metalsmith#use`:
 
 ```js
 var remove = require('@metalsmith/remove');

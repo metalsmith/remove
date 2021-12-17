@@ -32,6 +32,20 @@ metalsmith.use(remove('drafts/*'));   // single pattern
 metalsmith.use(remove(['drafts/*', 'unfinished/*'])); // multiple patterns
 ```
 
+### Debug
+
+To enable debug logs, set the `DEBUG` environment variable to `@metalsmith/remove`:
+
+Linux/Mac:
+```bash
+DEBUG=@metalsmith/remove
+```
+
+Windows:
+```batch
+set "DEBUG=@metalsmith/remove"
+```
+
 ### CLI Usage
 
 To use this plugin with the Metalsmith CLI, add `@metalsmith/remove` to the `plugins` key in your `metalsmith.json` file:

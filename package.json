@@ -55,6 +55,7 @@
     "access": "public"
   },
   "dependencies": {
+    "debug": "^4.3.3",
     "micromatch": "^4.0.4"
   }
 }

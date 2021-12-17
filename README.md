@@ -1,6 +1,6 @@
-# Metalsmith Ignore
+# @metalsmith/remove
 
-A Metalsmith plugin to ignore files that match a pattern. Uses [multimatch](https://github.com/sindresorhus/multimatch) for matching.
+A [Metalsmith](https://metalsmith.io) plugin to remove files from the build by pattern. Uses [multimatch](https://github.com/sindresorhus/multimatch) for matching.
 
 [![metalsmith: core plugin][metalsmith-badge]][metalsmith-url]
 [![npm: version][npm-badge]][npm-url]
@@ -8,16 +8,17 @@ A Metalsmith plugin to ignore files that match a pattern. Uses [multimatch](http
 [![code coverage][codecov-badge]][codecov-url]
 [![license: MIT][license-badge]][license-url]
 
+Use `@metalsmith/remove` to discard files from the build output after their metadata and contents have been read into memory. While `Metalsmith#ignore` ignores the matched files completely, `@metalsmith/remove` *only* removes them at the point the plugin is `use`'d.
 ## Installation
 
 NPM:
 ```bash
-npm install @metalsmith/ignore
+npm install @metalsmith/remove
 ```
 Yarn:
 
 ```bash
-yarn add @metalsmith/ignore
+yarn add @metalsmith/remove
 ```
 
 ## Usage
@@ -25,27 +26,20 @@ yarn add @metalsmith/ignore
 Pass the options to `Metalsmith#use`:
 
 ```js
-var ignore = require('@metalsmith/ignore');
+var remove = require('@metalsmith/remove');
 
-metalsmith.use(ignore('drafts/*'));
-```
-
-You can also pass an array of patterns to ignore:
-
-```js
-var ignore = require('@metalsmith/ignore');
-
-metalsmith.use(ignore(['drafts/*', 'unfinished/*']));
+metalsmith.use(remove('drafts/*'));   // single pattern
+metalsmith.use(remove(['drafts/*', 'unfinished/*'])); // multiple patterns
 ```
 
 ### CLI Usage
 
-Install via npm and then add the `@metalsmith/ignore` key to your `metalsmith.json` plugins. The simplest case just ignores a single pattern:
+To use this plugin with the Metalsmith CLI, add `@metalsmith/remove` to the `plugins` key in your `metalsmith.json` file:
 
 ```json
 {
   "plugins": [
-    { "@metalsmith/ignore": "drafts/*" }
+    { "@metalsmith/remove": "drafts/*" }
   ]
 }
 ```
@@ -55,7 +49,7 @@ But you can also pass an array of patterns to ignore:
 ```json
 {
   "plugins": [
-    { "@metalsmith/ignore": ["drafts/*", "unfinished/*"] }
+    { "@metalsmith/remove": ["drafts/*", "unfinished/*"] }
   ]
 }
 ```
@@ -64,13 +58,13 @@ But you can also pass an array of patterns to ignore:
 
 MIT
 
-[npm-badge]: https://img.shields.io/npm/v/@metalsmith/ignore.svg
-[npm-url]: https://www.npmjs.com/package/@metalsmith/ignore
-[ci-badge]: https://app.travis-ci.com/metalsmith/ignore.svg?branch=master
-[ci-url]: https://app.travis-ci.com/github/metalsmith/ignore
+[npm-badge]: https://img.shields.io/npm/v/@metalsmith/remove.svg
+[npm-url]: https://www.npmjs.com/package/@metalsmith/remove
+[ci-badge]: https://app.travis-ci.com/metalsmith/remove.svg?branch=master
+[ci-url]: https://app.travis-ci.com/github/metalsmith/remove
 [metalsmith-badge]: https://img.shields.io/badge/metalsmith-plugin-green.svg?longCache=true
 [metalsmith-url]: https://metalsmith.io
-[codecov-badge]: https://img.shields.io/coveralls/github/metalsmith/ignore
-[codecov-url]: https://coveralls.io/github/metalsmith/ignore
-[license-badge]:https://img.shields.io/github/license/metalsmith/ignore
+[codecov-badge]: https://img.shields.io/coveralls/github/metalsmith/remove
+[codecov-url]: https://coveralls.io/github/metalsmith/remove
+[license-badge]:https://img.shields.io/github/license/metalsmith/remove
 [license-url]: LICENSE

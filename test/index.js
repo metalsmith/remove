@@ -5,7 +5,7 @@ const ignore = require('..');
 const Metalsmith = require('metalsmith');
 const rm = require('rimraf').sync;
 
-describe('@metalsmith/ignore', function() {
+describe('@metalsmith/remove', function() {
   it('should ignore a patterns', function(done) {
     rm('test/fixtures/object/build');
     const m = Metalsmith('test/fixtures/object').use(

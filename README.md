@@ -8,13 +8,16 @@ A [Metalsmith](https://metalsmith.io) plugin to remove files from the build by p
 [![code coverage][codecov-badge]][codecov-url]
 [![license: MIT][license-badge]][license-url]
 
-Use `@metalsmith/remove` to discard files from the build output after their metadata and contents have been read into memory. While `Metalsmith#ignore` ignores the matched files completely, `@metalsmith/remove` *only* removes them at the point the plugin is `use`'d.
+Use `@metalsmith/remove` to discard files from the build output after their metadata and contents have been read into memory. While `Metalsmith#ignore` ignores the matched files completely, `@metalsmith/remove` _only_ removes them at the point the plugin is `use`'d.
+
 ## Installation
 
 NPM:
+
 ```bash
 npm install @metalsmith/remove
 ```
+
 Yarn:
 
 ```bash
@@ -28,7 +31,7 @@ Pass the options to `Metalsmith#use`:
 ```js
 var remove = require('@metalsmith/remove');
 
-metalsmith.use(remove('drafts/*'));   // single pattern
+metalsmith.use(remove('drafts/*')); // single pattern
 metalsmith.use(remove(['drafts/*', 'unfinished/*'])); // multiple patterns
 ```
 
@@ -37,11 +40,13 @@ metalsmith.use(remove(['drafts/*', 'unfinished/*'])); // multiple patterns
 To enable debug logs, set the `DEBUG` environment variable to `@metalsmith/remove`:
 
 Linux/Mac:
+
 ```bash
 DEBUG=@metalsmith/remove
 ```
 
 Windows:
+
 ```batch
 set "DEBUG=@metalsmith/remove"
 ```
@@ -52,9 +57,7 @@ To use this plugin with the Metalsmith CLI, add `@metalsmith/remove` to the `plu
 
 ```json
 {
-  "plugins": [
-    { "@metalsmith/remove": "drafts/*" }
-  ]
+  "plugins": [{ "@metalsmith/remove": "drafts/*" }]
 }
 ```
 
@@ -62,9 +65,7 @@ But you can also pass an array of patterns to ignore:
 
 ```json
 {
-  "plugins": [
-    { "@metalsmith/remove": ["drafts/*", "unfinished/*"] }
-  ]
+  "plugins": [{ "@metalsmith/remove": ["drafts/*", "unfinished/*"] }]
 }
 ```
 
@@ -80,5 +81,5 @@ But you can also pass an array of patterns to ignore:
 [metalsmith-url]: https://metalsmith.io
 [codecov-badge]: https://img.shields.io/coveralls/github/metalsmith/remove
 [codecov-url]: https://coveralls.io/github/metalsmith/remove
-[license-badge]:https://img.shields.io/github/license/metalsmith/remove
+[license-badge]: https://img.shields.io/github/license/metalsmith/remove
 [license-url]: LICENSE

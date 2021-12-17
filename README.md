@@ -1,6 +1,6 @@
 # @metalsmith/remove
 
-A [Metalsmith](https://metalsmith.io) plugin to remove files from the build by pattern. Uses [multimatch](https://github.com/sindresorhus/multimatch) for matching.
+A [Metalsmith](https://metalsmith.io) plugin to remove files from the build by pattern. Uses [micromatch](https://github.com/micromatch/micromatch) for matching.
 
 [![metalsmith: core plugin][metalsmith-badge]][metalsmith-url]
 [![npm: version][npm-badge]][npm-url]
@@ -56,7 +56,7 @@ But you can also pass an array of patterns to ignore:
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 [npm-badge]: https://img.shields.io/npm/v/@metalsmith/remove.svg
 [npm-url]: https://www.npmjs.com/package/@metalsmith/remove

@@ -42,7 +42,6 @@
     "eslint-config-prettier": "^8.3.0",
     "metalsmith": "^2.3.0",
     "mocha": "^7.2.0",
-    "multimatch": "^4.0.0",
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
     "prettier": "^2.5.1",
@@ -54,5 +53,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "micromatch": "^4.0.4"
   }
 }

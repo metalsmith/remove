@@ -1,6 +1,6 @@
 # @metalsmith/remove
 
-A [Metalsmith](https://metalsmith.io) plugin to remove files from the build by pattern. Uses [micromatch](https://github.com/micromatch/micromatch) for matching.
+A Metalsmith plugin to remove files from the build
 
 [![metalsmith: core plugin][metalsmith-badge]][metalsmith-url]
 [![npm: version][npm-badge]][npm-url]
@@ -8,7 +8,7 @@ A [Metalsmith](https://metalsmith.io) plugin to remove files from the build by p
 [![code coverage][codecov-badge]][codecov-url]
 [![license: MIT][license-badge]][license-url]
 
-Use `@metalsmith/remove` to discard files from the build output after their metadata and contents have been read into memory. While `Metalsmith#ignore` ignores the matched files completely, `@metalsmith/remove` _only_ removes them at the point the plugin is `use`'d.
+Use `@metalsmith/remove` to discard files from the build output after their metadata and contents have been read and used by plugins. While `Metalsmith#ignore` ignores the matched files completely, `@metalsmith/remove` _only_ removes them at the point the plugin is `use`'d.
 
 ## Installation
 

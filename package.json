@@ -1,19 +1,19 @@
 {
   "name": "@metalsmith/remove",
   "version": "1.1.0",
-  "description": "A Metalsmith plugin to ignore files that match a pattern.",
+  "description": "A Metalsmith plugin to remove files from the build",
   "keywords": [
     "ignore",
     "metalsmith-plugin",
     "metalsmith"
   ],
-  "homepage": "https://github.com/@metalsmith/remove#readme",
+  "homepage": "https://github.com/metalsmith/remove#readme",
   "bugs": {
-    "url": "https://github.com/@metalsmith/remove/issues"
+    "url": "https://github.com/metalsmith/remove/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/@metalsmith/remove.git"
+    "url": "https://github.com/metalsmith/remove.git"
   },
   "license": "MIT",
   "main": "lib/index.js",

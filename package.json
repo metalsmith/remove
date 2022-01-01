@@ -46,8 +46,7 @@
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
     "prettier": "^2.5.1",
-    "release-it": "^14.11.8",
-    "rimraf": "^2.2.6"
+    "release-it": "^14.11.8"
   },
   "peerDependencies": {
     "metalsmith": "^2.3.0"

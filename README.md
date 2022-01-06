@@ -29,10 +29,10 @@ yarn add @metalsmith/remove
 Pass the plugin with options to `Metalsmith#use`:
 
 ```js
-var remove = require('@metalsmith/remove');
+var remove = require('@metalsmith/remove')
 
-metalsmith.use(remove('drafts/*')); // single pattern
-metalsmith.use(remove(['drafts/*', 'unfinished/*'])); // multiple patterns
+metalsmith.use(remove('drafts/*')) // single pattern
+metalsmith.use(remove(['drafts/*', 'unfinished/*'])) // multiple patterns
 ```
 
 ### Debug

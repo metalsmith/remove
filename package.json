@@ -28,17 +28,17 @@
   "scripts": {
     "changelog": "auto-changelog -u --commit-limit false --ignore-commit-pattern '^((dev|chore|ci):|Release)'",
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
-    "coveralls": "npm run coverage && cat ./coverage.info | coveralls",
     "dev": "nodemon --exec 'npm test'",
     "format": "prettier --write \"**/*.{yml,md,js,json}\"",
-    "lint": "eslint --cache --fix .",
+    "format:check": "prettier --list-different \"**/*.{yml,md,js,json}\"",
+    "lint": "eslint --fix .",
+    "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
     "test": "nyc mocha"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.1.0",
     "auto-changelog": "^2.4.0",
-    "coveralls": "^3.1.1",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "metalsmith": "^2.4.1",

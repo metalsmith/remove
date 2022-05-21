@@ -75,8 +75,8 @@ But you can also pass an array of patterns to ignore:
 
 [npm-badge]: https://img.shields.io/npm/v/@metalsmith/remove.svg
 [npm-url]: https://www.npmjs.com/package/@metalsmith/remove
-[ci-badge]: https://app.travis-ci.com/metalsmith/remove.svg?branch=master
-[ci-url]: https://app.travis-ci.com/github/metalsmith/remove
+[ci-badge]: https://github.com/metalsmith/remove/actions/workflows/test.yml/badge.svg
+[ci-url]: https://github.com/metalsmith/remove/actions/workflows/test.yml
 [metalsmith-badge]: https://img.shields.io/badge/metalsmith-plugin-green.svg?longCache=true
 [metalsmith-url]: https://metalsmith.io
 [codecov-badge]: https://img.shields.io/coveralls/github/metalsmith/remove

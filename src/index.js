@@ -1,4 +1,5 @@
-const debug = require('debug')('@metalsmith/remove')
+import debugLib from 'debug'
+const debug = debugLib('@metalsmith/remove')
 
 /**
  *
@@ -12,10 +13,8 @@ const debug = require('debug')('@metalsmith/remove')
  * @param  {String|String[]|Options} [options] One or more [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming))
  * @return {import('metalsmith').Plugin}
  */
-function plugin(options) {
+function initRemove(options) {
   return function remove(files, metalsmith, done) {
-    setImmediate(done)
-
     if ('string' == typeof options) {
       options = [options]
     }
@@ -32,7 +31,9 @@ function plugin(options) {
       delete files[filename]
       debug('Removed file %s', filename)
     })
+
+    done()
   }
 }
 
-module.exports = plugin
+export default initRemove

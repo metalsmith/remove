@@ -16,7 +16,6 @@
     "url": "https://github.com/metalsmith/remove.git"
   },
   "license": "MIT",
-  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -25,6 +24,14 @@
     "lib",
     "CHANGELOG.md"
   ],
+  "source": "src/index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "type": "module",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.mjs"
+  },
   "scripts": {
     "changelog": "auto-changelog -u --commit-limit false --ignore-commit-pattern '^((dev|chore|ci):|Release)'",
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
@@ -34,19 +41,24 @@
     "lint": "eslint --fix .",
     "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
+    "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict",
+    "pretest": "npm run build",
     "test": "nyc mocha"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.1.0",
     "auto-changelog": "^2.4.0",
-    "eslint": "^8.16.0",
+    "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
     "metalsmith": "^2.4.1",
+    "microbundle": "^0.15.0",
     "mocha": "^7.2.0",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.19",
     "nyc": "^15.1.0",
-    "prettier": "^2.6.2",
-    "release-it": "^15.0.0"
+    "prettier": "^2.7.1",
+    "release-it": "^15.2.0"
   },
   "peerDependencies": {
     "metalsmith": "^2.4.1"

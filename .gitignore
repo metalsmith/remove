@@ -11,3 +11,6 @@ npm-debug.log*
 **/build
 coverage.info
 .nyc_output
+
+# build output
+lib

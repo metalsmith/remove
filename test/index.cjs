@@ -1,6 +1,8 @@
-const { describe, it } = require('mocha')
+/* eslint-env node, mocha */
+
 const equal = require('assert-dir-equal')
-const remove = require('..')
+/* eslint-disable-next-line */
+const remove = require('../lib/index.cjs')
 const Metalsmith = require('metalsmith')
 
 describe('@metalsmith/remove', function () {

@@ -50,4 +50,14 @@ describe('@metalsmith/remove', function () {
       done()
     })
   })
+
+  it('should ignore non-string or array inputs', function (done) {
+    Metalsmith('test/fixtures/other')
+      .use(remove(null))
+      .build(function (err) {
+        if (err) return done(err)
+        equal('test/fixtures/other/build', 'test/fixtures/other/expected')
+        done()
+      })
+  })
 })

@@ -31,7 +31,7 @@
   "type": "module",
   "exports": {
     "require": "./lib/index.cjs",
-    "import": "./lib/index.mjs"
+    "import": "./lib/index.js"
   },
   "scripts": {
     "changelog": "auto-changelog -u --commit-limit false --ignore-commit-pattern '^((dev|chore|ci):|Release)'",

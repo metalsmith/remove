@@ -3,7 +3,7 @@
   "version": "1.2.1",
   "description": "A Metalsmith plugin to remove files from the build",
   "keywords": [
-    "ignore",
+    "remove",
     "metalsmith-plugin",
     "metalsmith"
   ],

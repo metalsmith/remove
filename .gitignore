@@ -13,4 +13,4 @@ coverage.info
 .nyc_output
 
 # build output
-lib
+lib/*.*js

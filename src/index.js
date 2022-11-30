@@ -13,7 +13,7 @@ const debug = debugLib('@metalsmith/remove')
  * @param  {String|String[]|Options} [options] One or more [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming))
  * @return {import('metalsmith').Plugin}
  */
-function initRemove(options) {
+function remove(options) {
   return function remove(files, metalsmith, done) {
     if ('string' == typeof options) {
       options = [options]
@@ -36,4 +36,4 @@ function initRemove(options) {
   }
 }
 
-export default initRemove
+export default remove

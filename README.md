@@ -37,19 +37,13 @@ metalsmith.use(remove(['drafts/*', 'unfinished/*'])) // multiple patterns
 
 ### Debug
 
-To enable debug logs, set the `DEBUG` environment variable to `@metalsmith/remove`:
+To enable debug logs, set the `DEBUG` environment variable to `@metalsmith/remove*`:
 
-Linux/Mac:
-
-```bash
-DEBUG=@metalsmith/remove
+```js
+metalsmith.env('DEBUG', '@metalsmith/remove*')
 ```
 
-Windows:
-
-```batch
-set "DEBUG=@metalsmith/remove"
-```
+Alternatively you can set `DEBUG` to `@metalsmith/*` to debug all Metalsmith core plugins.
 
 ### CLI Usage
 

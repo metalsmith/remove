@@ -35,10 +35,20 @@ function remove(options) {
       debug('Marked %s files for removal', matches.length)
     }
 
-    matches.forEach((filename) => {
-      delete files[filename]
-      debug('Removed file %s', filename)
-    })
+    for (let i = 0; i < matches.length; i++) {
+      const filename = matches[i]
+      try {
+        const success = delete files[filename]
+        // delete returns false in CJS non-strict mode
+        /* istanbul ignore if */
+        if (success === false) throw new Error()
+        debug.info('Removed file "%s"', filename)
+        // but throws in CJS strict-mode or ESM mode
+      } catch (err) {
+        debug.error('Failed to remove file "%s"', filename)
+        break
+      }
+    }
 
     done()
   }

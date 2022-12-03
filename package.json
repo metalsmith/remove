@@ -21,8 +21,9 @@
     "test": "test"
   },
   "files": [
-    "lib",
-    "CHANGELOG.md"
+    "lib/index.cjs",
+    "lib/index.js",
+    "lib/index.d.ts"
   ],
   "types": "lib/types.d.ts",
   "source": "src/index.js",
@@ -60,12 +61,9 @@
     "release-it": "^15.5.0"
   },
   "peerDependencies": {
-    "metalsmith": "^2.4.1"
+    "metalsmith": "^2.5.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "debug": "^4.3.3"
   }
 }

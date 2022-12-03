@@ -1,5 +1,15 @@
-import debugLib from 'debug'
-const debug = debugLib('@metalsmith/remove')
+'use strict'
+
+function normalizeOptions(options) {
+  if ('string' == typeof options) {
+    options = [options]
+  }
+  if (Array.isArray(options)) {
+    options = { patterns: options }
+  }
+  options = options || {}
+  return options
+}
 
 /**
  *
@@ -15,17 +25,15 @@ const debug = debugLib('@metalsmith/remove')
  */
 function remove(options) {
   return function remove(files, metalsmith, done) {
-    if ('string' == typeof options) {
-      options = [options]
-    }
-    if (Array.isArray(options)) {
-      options = { patterns: options }
-    }
-    options = options || {}
-    const patterns = options.patterns || []
+    const patterns = normalizeOptions(options).patterns || []
+    const matches = metalsmith.match(patterns, Object.keys(files))
+    const debug = metalsmith.debug('@metalsmith/remove')
 
-    const matches = metalsmith.match(patterns)
-    debug('Marked %s files to remove', matches.length)
+    if (!matches.length) {
+      debug.warn('No files marked for removal')
+    } else {
+      debug('Marked %s files for removal', matches.length)
+    }
 
     matches.forEach((filename) => {
       delete files[filename]

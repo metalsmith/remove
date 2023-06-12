@@ -1,6 +1,6 @@
 {
   "name": "@metalsmith/remove",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A Metalsmith plugin to remove files from the build",
   "keywords": [
     "remove",

@@ -40,7 +40,7 @@ function remove(options) {
       try {
         const success = delete files[filename]
         // delete returns false in CJS non-strict mode
-        /* istanbul ignore if */
+        /* c8 ignore next */
         if (success === false) throw new Error()
         debug.info('Removed file "%s"', filename)
         // but throws in CJS strict-mode or ESM mode

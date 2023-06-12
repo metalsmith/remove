@@ -21,9 +21,7 @@
     "test": "test"
   },
   "files": [
-    "lib/index.cjs",
-    "lib/index.js",
-    "lib/index.d.ts"
+    "lib"
   ],
   "types": "lib/types.d.ts",
   "source": "src/index.js",
@@ -42,7 +40,7 @@
     "lint": "eslint --fix .",
     "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
-    "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict --generateTypes=false",
+    "build": "microbundle --target node -f cjs,esm --strict --generateTypes=false",
     "pretest": "npm run build",
     "test": "c8 mocha"
   },

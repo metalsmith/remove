@@ -41,7 +41,7 @@
     "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
     "build": "microbundle --target node -f cjs,esm --strict --generateTypes=false",
-    "pretest": "npm run build",
+    "prepack": "npm run build",
     "test": "c8 mocha"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
+test/fixtures/**
+coverage/**
 package-lock.json
-package.json
-test/fixtures
-.nyc_output
+lib

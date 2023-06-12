@@ -1,16 +1,10 @@
-# NPM
-node_modules
 npm-debug.log*
 .npm
 *.tgz
-
-# ESLint Cache
 .eslintcache
-
-# tests
-**/build
+coverage
 coverage.info
-.nyc_output
-
-# build output
-lib/*.*js
+test/fixtures/*/build
+node_modules
+lib
+!lib/*.d.ts

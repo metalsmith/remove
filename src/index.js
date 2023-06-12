@@ -22,6 +22,11 @@ function normalizeOptions(options) {
  *
  * @param  {String|String[]|Options} [options] One or more [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming))
  * @return {import('metalsmith').Plugin}
+ * @example
+ * // remove all dotfiles that are direct children of metalsmith.source()
+ * metalsmith.use(remove('.*'))
+ * // remove all JSON files
+ * metalsmith.use(remove(['**\/*.json']))
  */
 function remove(options) {
   return function remove(files, metalsmith, done) {

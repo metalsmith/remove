@@ -49,7 +49,7 @@ function remove(options) {
         if (success === false) throw new Error()
         debug.info('Removed file "%s"', filename)
         // but throws in CJS strict-mode or ESM mode
-      } catch (err) {
+      } catch (_err) {
         debug.error('Failed to remove file "%s"', filename)
         break
       }
